@@ -15,7 +15,7 @@ MonoBehaviour:
   body: {fileID: 11400000, guid: 5435324ca94c5be48a7498669356eb42, type: 2}
   paintJob: {fileID: 11400000, guid: 4c285365583177544853134178cb8790, type: 2}
   addons: []
-  maxSpeed: 0
-  handling: 0
-  acceleration: 0
-  coolness: 0
+  maxSpeed: 10
+  handling: 20
+  acceleration: 30
+  coolness: 40

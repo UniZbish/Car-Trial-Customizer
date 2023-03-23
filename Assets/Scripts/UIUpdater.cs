@@ -11,7 +11,6 @@ public class UIUpdater : MonoBehaviour
 {
     [SerializeField]
     private GameObject newCarPanel;
-    [SerializeField]
     private GameObject playerCarsParent;
 
     private Button newCarButton;
@@ -21,6 +20,8 @@ public class UIUpdater : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        playerCarsParent = GameObject.Find("Panel_PlayerCars");
+
         newCarButton = GameObject.Find("Button_AddNewCar").GetComponent<Button>();
 
         speedText = GameObject.Find("SpeedNumberText").GetComponent<TMP_Text>();
@@ -36,8 +37,22 @@ public class UIUpdater : MonoBehaviour
     public void Start()
     {
         GameEventsPublisher.current.OnCreatedNewCar += Current_OnCreatedNewCar;
+        GameEventsPublisher.current.OnDisplayCar += DisplayCarStats;
 
         newCarButton.onClick.AddListener(GameEventsPublisher.current.CreateNewCar);
+    }
+
+    private void DisplayCarStats(Car car)
+    {
+        speedText.text = car.maxSpeed.ToString();
+        handlingText.text = car.handling.ToString();
+        accelerationText.text = car.acceleration.ToString();
+        coolnessText.text = car.coolness.ToString();
+
+        speedSlider.value = car.maxSpeed;
+        handlingSlider.value = car.handling;
+        accelerationSlider.value = car.acceleration;
+        coolnessSlider.value = car.coolness;
     }
 
     private void Current_OnCreatedNewCar(GameObject newCar)
@@ -50,16 +65,12 @@ public class UIUpdater : MonoBehaviour
         carSlotImage.sprite = carImageSprite;
     }
 
-    public void UpdateCarStatsUI(Car selectedCar)
+    private void OnDestroy()
     {
-        speedText.text = selectedCar.maxSpeed.ToString();
-        handlingText.text = selectedCar.handling.ToString();
-        accelerationText.text = selectedCar.acceleration.ToString();
-        coolnessText.text = selectedCar.coolness.ToString();
+        GameEventsPublisher.current.OnCreatedNewCar -= Current_OnCreatedNewCar;
+        GameEventsPublisher.current.OnDisplayCar -= DisplayCarStats;
 
-        speedSlider.value = selectedCar.maxSpeed;
-        handlingSlider.value = selectedCar.handling;
-        accelerationSlider.value = selectedCar.acceleration;
-        coolnessSlider.value = selectedCar.coolness;
+
+        newCarButton.onClick.RemoveAllListeners();
     }
 }

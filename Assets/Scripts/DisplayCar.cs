@@ -20,19 +20,21 @@ public class DisplayCar : MonoBehaviour
     void Start()
     {
         GameEventsPublisher.current.OnCreatedNewCar += Current_OnCreatedNewCar;
-        GameEventsPublisher.current.OnEditButtonClick += Current_OnEditButtonClick; ;
+        GameEventsPublisher.current.OnEditButtonClick += Current_OnEditButtonClick;
+
         holder = GameObject.Find("SelectedCarHolder");
     }
 
     private void Current_OnEditButtonClick(int index)
     {
-        DisplayTheCar(cars[index]);
+        GameObject car = cars[index];
+        DisplayTheCar(car);
     }
 
-    private void Current_OnCreatedNewCar(GameObject obj)
+    private void Current_OnCreatedNewCar(GameObject newCar)
     {
-        cars.Add(obj);
-        DisplayTheCar(obj);
+        cars.Add(newCar);
+        DisplayTheCar(newCar);
     }
 
     private void DisplayTheCar(GameObject car)
@@ -44,6 +46,7 @@ public class DisplayCar : MonoBehaviour
 
         selectedCar = car;
         selectedCar.SetActive(true);
+        GameEventsPublisher.current.DisplayedCar(car.GetComponent<VehicleStats>().carObject);
     }
 
     public void ChangeCar(int dropDownValue) 

@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61b253f016a2094ea7924723c809727, type: 3}
   m_Name: FamilyCar
   m_EditorClassIdentifier: 
-  carName: SUV
+  bodyName: SUV
   description: 
-  price: 30000
-  maxSpeed: 50
-  handling: 70
-  acceleration: 60
-  coolness: 60
+  changeSpeed: 0
+  changeHandling: 0
+  changeAcceleration: 0
+  changeCoolness: 0
   carModel: {fileID: 157676, guid: fcd06c9319e99cc4bbee7ce7730d9422, type: 3}
-  carMaterial: {fileID: 11400000, guid: 6322b160cf0bce340883e9c30f3b832b, type: 2}

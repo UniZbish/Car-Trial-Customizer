@@ -3435,7 +3435,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 2025488084}
   m_HandleRect: {fileID: 0}
@@ -7031,7 +7031,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 2145316168}
   m_HandleRect: {fileID: 0}
@@ -9777,7 +9777,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1750446058}
   m_HandleRect: {fileID: 0}
@@ -11394,7 +11394,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 2042250201}
   m_HandleRect: {fileID: 0}
@@ -11450,14 +11450,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15debcaf71e86704a9f7c69bd437f9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carsToDisplay:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  cars: []
   selectedCar: {fileID: 0}
-  carModel: {fileID: 0}
   UIScript: {fileID: 1605202549}
 --- !u!114 &1605202548
 MonoBehaviour:
@@ -11484,7 +11478,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newCarPanel: {fileID: 8525331923004283115, guid: 9088547e3267d1d4fb2e9a133671da25, type: 3}
-  playerCarsParent: {fileID: 147733985}
 --- !u!4 &1605202550
 Transform:
   m_ObjectHideFlags: 0

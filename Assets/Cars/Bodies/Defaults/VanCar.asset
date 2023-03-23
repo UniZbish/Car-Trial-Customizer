@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61b253f016a2094ea7924723c809727, type: 3}
   m_Name: VanCar
   m_EditorClassIdentifier: 
-  carName: Van
+  bodyName: Van
   description: 
-  price: 45000
-  maxSpeed: 20
-  handling: 50
-  acceleration: 40
-  coolness: 10
+  changeSpeed: 0
+  changeHandling: 0
+  changeAcceleration: 0
+  changeCoolness: 0
   carModel: {fileID: 130278, guid: 94469aeaca2d49442af381840b70bb6c, type: 3}
-  carMaterial: {fileID: 11400000, guid: 6322b160cf0bce340883e9c30f3b832b, type: 2}

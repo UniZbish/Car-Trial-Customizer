@@ -17,4 +17,9 @@ public class CreateNewCar : MonoBehaviour
         GameObject temp = Instantiate(defaultCar, carHolder.transform.position, carHolder.transform.rotation);
         GameEventsPublisher.current.CreatedNewCar(temp);
     }
+
+    public void OnDestroy()
+    {
+        GameEventsPublisher.current.OnCreateNewCar -= Current_OnCreateNewCar;
+    }
 }

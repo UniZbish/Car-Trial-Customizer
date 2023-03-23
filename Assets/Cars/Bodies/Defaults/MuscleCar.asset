@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61b253f016a2094ea7924723c809727, type: 3}
   m_Name: MuscleCar
   m_EditorClassIdentifier: 
-  carName: Muscle
+  bodyName: Muscle
   description: 
-  price: 25000
-  maxSpeed: 70
-  handling: 50
-  acceleration: 30
-  coolness: 70
+  changeSpeed: 0
+  changeHandling: 0
+  changeAcceleration: 0
+  changeCoolness: 0
   carModel: {fileID: 141870, guid: edf6cb56e12fba648b2cf1e7dfa5bf88, type: 3}
-  carMaterial: {fileID: 11400000, guid: 6322b160cf0bce340883e9c30f3b832b, type: 2}

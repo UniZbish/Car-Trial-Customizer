@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61b253f016a2094ea7924723c809727, type: 3}
   m_Name: HatchbackCar
   m_EditorClassIdentifier: 
-  carName: Hatchback
+  bodyName: Hatchback
   description: 
-  price: 20000
-  maxSpeed: 60
-  handling: 50
-  acceleration: 40
-  coolness: 60
+  changeSpeed: 10
+  changeHandling: 20
+  changeAcceleration: 30
+  changeCoolness: 40
   carModel: {fileID: 127632, guid: 0383b854a926f1643b20f9c7cdb2e4de, type: 3}
-  carMaterial: {fileID: 11400000, guid: 6322b160cf0bce340883e9c30f3b832b, type: 2}

@@ -30,4 +30,10 @@ public class GameEventsPublisher : MonoBehaviour
         OnEditButtonClick?.Invoke(id);
     }
 
+    public event Action<Car> OnDisplayCar;
+    public void DisplayedCar(Car car)
+    {
+        OnDisplayCar?.Invoke(car);
+    }
+
 }
