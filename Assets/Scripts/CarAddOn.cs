@@ -7,8 +7,8 @@ public class CarAddOn : ScriptableObject
 {
     public GameObject model;
 
-    public int changeSpeed;
-    public int changeHandling;
-    public int changeAcceleration;
-    public int changeCoolness;
+    public float changeSpeed;
+    public float changeHandling;
+    public float changeAcceleration;
+    public float changeCoolness;
 }

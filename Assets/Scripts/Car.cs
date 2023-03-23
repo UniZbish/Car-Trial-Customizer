@@ -9,9 +9,9 @@ public class Car : ScriptableObject
     public CarPaint paintJob;
     public List<CarAddOn> addons;
 
-    public int maxSpeed;
-    public int handling;
-    public int acceleration;
-    public int coolness;
+    public float maxSpeed;
+    public float handling;
+    public float acceleration;
+    public float coolness;
 
 }

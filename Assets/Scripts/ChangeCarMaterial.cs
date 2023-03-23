@@ -14,11 +14,13 @@ public class ChangeCarMaterial : MonoBehaviour
 
     public void MaterialChange(CarPaint newMaterial)
     {
+        /*
         currentCar = displayCarScript.selectedCar;
         RemoveOldStats();
         currentCar.paintJob = newMaterial;
         ApplyNewStats();
         displayCarScript.ApplyMaterial(displayCarScript.carModel);
+        */
     }
 
     public void RemoveOldStats()

@@ -34,7 +34,7 @@ public class CameraControls : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonUp(0)) 
+        if (Input.GetMouseButtonUp(0))
         {
             buttonUp = true;
         };

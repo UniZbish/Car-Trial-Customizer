@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 8454791892664131527}
   - component: {fileID: 3865269242908214292}
   - component: {fileID: 7413313560842513755}
+  - component: {fileID: 194297708380439776}
   m_Layer: 5
   m_Name: Button_CarEdit
   m_TagString: Untagged
@@ -242,6 +243,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &194297708380439776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3212883044762210315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 523e8689ab2e2244d80b1d02693dc4c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4010287925254360907
 GameObject:
   m_ObjectHideFlags: 0

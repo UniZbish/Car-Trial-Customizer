@@ -9,10 +9,10 @@ public class CarBodies : ScriptableObject
     public string bodyName;
     public string description;
 
-    public int changeSpeed;
-    public int changeHandling;
-    public int changeAcceleration;
-    public int changeCoolness;
+    public float changeSpeed;
+    public float changeHandling;
+    public float changeAcceleration;
+    public float changeCoolness;
 
     public GameObject carModel;
 }

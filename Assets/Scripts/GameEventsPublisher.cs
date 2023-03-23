@@ -23,4 +23,11 @@ public class GameEventsPublisher : MonoBehaviour
     {
         OnCreatedNewCar?.Invoke(newCar);
     }
+
+    public event Action<int> OnEditButtonClick;
+    public void EditCar(int id) 
+    {
+        OnEditButtonClick?.Invoke(id);
+    }
+
 }

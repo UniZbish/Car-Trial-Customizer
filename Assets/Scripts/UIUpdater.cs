@@ -35,14 +35,15 @@ public class UIUpdater : MonoBehaviour
     }
     public void Start()
     {
-        GameEventsPublisher.current.OnCreatedNewCar += OnCreatedNewCar; ;
+        GameEventsPublisher.current.OnCreatedNewCar += Current_OnCreatedNewCar;
 
-        newCarButton.onClick.AddListener(CreateNewCarPressed);
+        newCarButton.onClick.AddListener(GameEventsPublisher.current.CreateNewCar);
     }
 
-    private void OnCreatedNewCar(GameObject newCar)
+    private void Current_OnCreatedNewCar(GameObject newCar)
     {
         GameObject temp = Instantiate(newCarPanel, playerCarsParent.transform);
+        temp.name = (playerCarsParent.transform.childCount - 1).ToString();
         Texture2D carImage = AssetPreview.GetAssetPreview(newCar);
         Sprite carImageSprite = Sprite.Create(carImage, new Rect(0, 0, carImage.width, carImage.height), new Vector2(0.5f, 0.5f));
         Image carSlotImage = temp.transform.Find("Image_CarImg").GetComponent<Image>();
@@ -60,10 +61,5 @@ public class UIUpdater : MonoBehaviour
         handlingSlider.value = selectedCar.handling;
         accelerationSlider.value = selectedCar.acceleration;
         coolnessSlider.value = selectedCar.coolness;
-    }
-
-    public void CreateNewCarPressed() 
-    {
-        GameEventsPublisher.current.CreateNewCar();
     }
 }

@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 5299617060650649203}
   - component: {fileID: 5299617060651765327}
   - component: {fileID: 5290168180468693007}
+  - component: {fileID: -4952435829846483193}
   m_Layer: 0
   m_Name: PlayerCar
   m_TagString: Untagged
@@ -198,6 +199,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 5f72e1579cd001244802c30b332dae70, type: 3}
+--- !u!114 &-4952435829846483193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5299617060649539477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 132db10da78b56b4caead53f984422a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carObject: {fileID: 11400000, guid: 150174497aff71c469a6427c747205ff, type: 2}
 --- !u!1 &5299617060649550573
 GameObject:
   m_ObjectHideFlags: 0
