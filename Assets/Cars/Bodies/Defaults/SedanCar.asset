@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61b253f016a2094ea7924723c809727, type: 3}
+  m_Name: SedanCar
+  m_EditorClassIdentifier: 
+  carName: Sedan
+  description: 
+  price: 25000
+  maxSpeed: 50
+  handling: 60
+  acceleration: 50
+  coolness: 30
+  carModel: {fileID: 198730, guid: 85ac88d7c46e0ea4583870a98cc13580, type: 3}
+  carMaterial: {fileID: 11400000, guid: 6322b160cf0bce340883e9c30f3b832b, type: 2}
