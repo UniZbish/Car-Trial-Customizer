@@ -8,10 +8,14 @@ using UnityEngine.UI;
 
 public class DisplayCar : MonoBehaviour
 {
-    public List<GameObject> cars;
+    private List<GameObject> cars;
+    [SerializeField]
+    private List<CarPaint> paintJobs;
+    [SerializeField]
+    private List<CarBodies> carBodies;
+    [SerializeField]
+    private List<CarAddOn> carAddons;
     public GameObject selectedCar;
-
-    private GameObject holder;
 
     [SerializeField]
     private UIUpdater UIScript;
@@ -19,19 +23,32 @@ public class DisplayCar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameEventsPublisher.current.OnCreatedNewCar += Current_OnCreatedNewCar;
-        GameEventsPublisher.current.OnEditButtonClick += Current_OnEditButtonClick;
+        cars = new List<GameObject>();
 
-        holder = GameObject.Find("SelectedCarHolder");
+        GameEventsPublisher.current.OnCreatedNewCar += CreateNewCar;
+        GameEventsPublisher.current.OnDeleteCar += DeleteCar;
+        GameEventsPublisher.current.OnEditSelectedCar += EditButtonClick;
+        GameEventsPublisher.current.OnPaintJobChange += ApplyPaintJob;
+    }
+    private void DeleteCar(int index)
+    {
+        GameObject carToDelete = cars[index];
+        DisplayTheCar(carToDelete);
+        cars.Remove(carToDelete);
+        Destroy(selectedCar);
+        if(cars.Count != 0) 
+        {
+            DisplayTheCar(cars[cars.Count - 1]);
+        }
     }
 
-    private void Current_OnEditButtonClick(int index)
+    private void EditButtonClick(int index)
     {
         GameObject car = cars[index];
         DisplayTheCar(car);
     }
 
-    private void Current_OnCreatedNewCar(GameObject newCar)
+    private void CreateNewCar(GameObject newCar)
     {
         cars.Add(newCar);
         DisplayTheCar(newCar);
@@ -46,24 +63,14 @@ public class DisplayCar : MonoBehaviour
 
         selectedCar = car;
         selectedCar.SetActive(true);
-        GameEventsPublisher.current.DisplayedCar(car.GetComponent<VehicleStats>().carObject);
+        GameEventsPublisher.current.MaterialChanged(selectedCar.GetComponent<VehicleStats>().id);
     }
 
-    public void ChangeCar(int dropDownValue) 
+    public void ApplyPaintJob(int indexToApply)
     {
-        //for (int i = 0; i < holder.transform.childCount; i++)
-        //{
-        //    Destroy(holder.transform.GetChild(i).gameObject);
-        //}
-        //
-        //selectedCar = carsToDisplay[dropDownValue];
-        //carModel = Instantiate(selectedCar.body.carModel, holder.transform);
-        //ApplyMaterial(carModel);
-    }
-
-    public void ApplyMaterial(GameObject car)
-    {
-        //car.GetComponent<MeshRenderer>().material = selectedCar.GetComponent<>.material;
-        //UIScript.UpdateTheUI(selectedCar);
+        CarPaint newPaint = paintJobs[indexToApply];
+        selectedCar.GetComponent<VehicleStats>().paintJob = newPaint;
+        selectedCar.GetComponent<MeshRenderer>().material = newPaint.material;
+        GameEventsPublisher.current.MaterialChanged(selectedCar.GetComponent<VehicleStats>().id);
     }
 }

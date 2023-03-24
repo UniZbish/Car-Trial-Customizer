@@ -5,34 +5,51 @@ using UnityEngine;
 
 public class VehicleStats : MonoBehaviour
 {
-    public Car carObject;
+    public CarBodies body;
+    public CarPaint paintJob;
+    public List<CarAddOn> addons;
+
+    public float maxSpeed;
+    public float handling;
+    public float acceleration;
+    public float coolness;
+
+    public int id;
 
     private void Start()
     {
-        RefreshStats(false);
+        GameEventsPublisher.current.OnMaterialChanged += RefreshStats;
+        
+        RefreshStats(id);
     }
 
-    public void RefreshStats(bool addons)
+    public void RefreshStats(int providedId)
     {
-        carObject.maxSpeed      = 0;
-        carObject.handling      = 0;
-        carObject.acceleration  = 0;
-        carObject.coolness      = 0;
-
-        carObject.maxSpeed     = carObject.body.changeSpeed         += carObject.paintJob.changeSpeed;
-        carObject.handling     = carObject.body.changeHandling      += carObject.paintJob.changeHandling;
-        carObject.acceleration = carObject.body.changeAcceleration  += carObject.paintJob.changeAcceleration;
-        carObject.coolness     = carObject.body.changeCoolness      += carObject.paintJob.changeCoolness;
-
-        if (addons)
+        if (id == providedId)
         {
-            foreach (CarAddOn addon in carObject.addons)
+            maxSpeed = 0;
+            handling = 0;
+            acceleration = 0;
+            coolness = 0;
+
+            maxSpeed += body.changeSpeed + paintJob.changeSpeed;
+            handling += body.changeHandling + paintJob.changeHandling;
+            acceleration += body.changeAcceleration + paintJob.changeAcceleration;
+            coolness += body.changeCoolness + paintJob.changeCoolness;
+
+            foreach (CarAddOn addon in addons)
             {
-                carObject.maxSpeed      += addon.changeSpeed;
-                carObject.handling      += addon.changeHandling;
-                carObject.acceleration  += addon.changeAcceleration;
-                carObject.coolness      += addon.changeCoolness;
+                maxSpeed += addon.changeSpeed;
+                handling += addon.changeHandling;
+                acceleration += addon.changeAcceleration;
+                coolness += addon.changeCoolness;
             }
+            GameEventsPublisher.current.DisplayCarStats(this);
         }
+    }
+
+    private void OnDestroy()
+    {
+        GameEventsPublisher.current.OnMaterialChanged -= RefreshStats;
     }
 }

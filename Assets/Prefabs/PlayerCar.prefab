@@ -211,7 +211,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 132db10da78b56b4caead53f984422a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carObject: {fileID: 11400000, guid: 150174497aff71c469a6427c747205ff, type: 2}
+  body: {fileID: 11400000, guid: 5435324ca94c5be48a7498669356eb42, type: 2}
+  paintJob: {fileID: 11400000, guid: 4c285365583177544853134178cb8790, type: 2}
+  addons: []
+  maxSpeed: 0
+  handling: 0
+  acceleration: 0
+  coolness: 0
 --- !u!1 &5299617060649550573
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7537221955089294376}
   - component: {fileID: 878212297969038680}
   - component: {fileID: 4455234182858892884}
+  - component: {fileID: 538311908385185198}
   m_Layer: 5
   m_Name: Button_CarDelete
   m_TagString: Untagged
@@ -121,6 +122,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &538311908385185198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592479572823448254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59789e946793bf84a8e2cd28183655f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3212883044762210315
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,7 +758,7 @@ GameObject:
   - component: {fileID: 8812424519825116591}
   m_Layer: 5
   m_Name: Panel_CarSlot
-  m_TagString: Untagged
+  m_TagString: CarSlot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

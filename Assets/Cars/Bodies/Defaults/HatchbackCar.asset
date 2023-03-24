@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyName: Hatchback
   description: 
-  changeSpeed: 10
-  changeHandling: 20
-  changeAcceleration: 30
-  changeCoolness: 40
+  changeSpeed: 40
+  changeHandling: 60
+  changeAcceleration: 40
+  changeCoolness: 20
   carModel: {fileID: 127632, guid: 0383b854a926f1643b20f9c7cdb2e4de, type: 3}
