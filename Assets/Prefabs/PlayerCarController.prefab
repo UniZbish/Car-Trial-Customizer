@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &716624010929992322
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2932939434992180703}
+  - component: {fileID: 4850440421387317086}
+  m_Layer: 0
+  m_Name: PlayerCarController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2932939434992180703
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716624010929992322}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.8195667, y: 0.029999733, z: -5.3315144}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 45215976857360670}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4850440421387317086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716624010929992322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 132db10da78b56b4caead53f984422a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  body: {fileID: 11400000, guid: 5435324ca94c5be48a7498669356eb42, type: 2}
+  paintJob: {fileID: 11400000, guid: 4c285365583177544853134178cb8790, type: 2}
+  addons: []
+  maxSpeed: 0
+  handling: 0
+  acceleration: 0
+  coolness: 0
+  id: 0
+--- !u!1001 &684070960267294969
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2932939434992180703}
+    m_Modifications:
+    - target: {fileID: 711266757765308903, guid: 4ac464e8067af774f8a511735b36df86, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 711266757765308903, guid: 4ac464e8067af774f8a511735b36df86, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 711266757765308903, guid: 4ac464e8067af774f8a511735b36df86, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 711266757765308903, guid: 4ac464e8067af774f8a511735b36df86, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 711266757765308903, guid: 4ac464e8067af774f8a511735b36df86, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 711266757765308903, guid: 4ac464e8067af774f8a511735b36df86, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 711266757765308903, guid: 4ac464e8067af774f8a511735b36df86, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 711266757765308903, guid: 4ac464e8067af774f8a511735b36df86, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 711266757765308903, guid: 4ac464e8067af774f8a511735b36df86, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 711266757765308903, guid: 4ac464e8067af774f8a511735b36df86, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 711266757765308903, guid: 4ac464e8067af774f8a511735b36df86, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067325877589097917, guid: 4ac464e8067af774f8a511735b36df86, type: 3}
+      propertyPath: m_Name
+      value: PlayerCar
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4ac464e8067af774f8a511735b36df86, type: 3}
+--- !u!4 &45215976857360670 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 711266757765308903, guid: 4ac464e8067af774f8a511735b36df86, type: 3}
+  m_PrefabInstance: {fileID: 684070960267294969}
+  m_PrefabAsset: {fileID: 0}

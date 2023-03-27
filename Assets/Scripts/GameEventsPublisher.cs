@@ -63,4 +63,22 @@ public class GameEventsPublisher : MonoBehaviour
     {
         OnMaterialChanged?.Invoke(id);
     }
+
+    public event Action<int> OnBodyTypeChange;
+    public void ApplyBodyType(int bodyIndex)
+    {
+        OnBodyTypeChange?.Invoke(bodyIndex);
+    }
+
+    public event Action<int> OnBodyTypeChanged;
+    public void BodyTypeChanged(int bodyIndex)
+    {
+        OnBodyTypeChanged?.Invoke(bodyIndex);
+    }
+    
+    public event Action<int> OnAddonSelect;
+    public void SelectAddon(int bodyIndex)
+    {
+        OnAddonSelect?.Invoke(bodyIndex);
+    }
 }
