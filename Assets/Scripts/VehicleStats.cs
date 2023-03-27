@@ -19,6 +19,7 @@ public class VehicleStats : MonoBehaviour
     private void Start()
     {
         GameEventsPublisher.current.OnMaterialChanged += RefreshStats;
+        GameEventsPublisher.current.OnBodyTypeChanged += RefreshStats;
         
         RefreshStats(id);
     }
@@ -51,5 +52,6 @@ public class VehicleStats : MonoBehaviour
     private void OnDestroy()
     {
         GameEventsPublisher.current.OnMaterialChanged -= RefreshStats;
+        GameEventsPublisher.current.OnBodyTypeChanged -= RefreshStats;
     }
 }
