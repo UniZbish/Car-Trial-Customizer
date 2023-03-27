@@ -29,7 +29,10 @@ public class DisplayCar : MonoBehaviour
         GameEventsPublisher.current.OnDeleteCar += DeleteCar;
         GameEventsPublisher.current.OnEditSelectedCar += EditButtonClick;
         GameEventsPublisher.current.OnPaintJobChange += ApplyPaintJob;
+        GameEventsPublisher.current.OnBodyTypeChange += ApplyBodyType;
     }
+
+
     private void DeleteCar(int index)
     {
         GameObject carToDelete = cars[index];
@@ -70,7 +73,26 @@ public class DisplayCar : MonoBehaviour
     {
         CarPaint newPaint = paintJobs[indexToApply];
         selectedCar.GetComponent<VehicleStats>().paintJob = newPaint;
-        selectedCar.GetComponent<MeshRenderer>().material = newPaint.material;
+        selectedCar.GetComponentInChildren<MeshRenderer>().material = newPaint.material;
         GameEventsPublisher.current.MaterialChanged(selectedCar.GetComponent<VehicleStats>().id);
+    }
+    private void ApplyBodyType(int indexToApply)
+    {
+        CarBodies newBody = carBodies[indexToApply];
+        selectedCar.GetComponent<VehicleStats>().body = newBody;
+        DestroyCarModel();
+        InstantiateNewCarModel(newBody.carModel);
+        GameEventsPublisher.current.BodyTypeChanged(selectedCar.GetComponent<VehicleStats>().id);
+    }
+
+    private void DestroyCarModel() 
+    {
+        Destroy(selectedCar.transform.Find("PlayerCar").gameObject);
+    }
+
+    private void InstantiateNewCarModel(GameObject model)
+    {
+        GameObject temp = Instantiate(model, selectedCar.transform);
+        temp.name = "PlayerCar";
     }
 }
