@@ -4,7 +4,7 @@ Combustable is a time trial racing game with a unique customization mechanic whe
 
 ### Making a car is simple 
   1. Select a body time and paint job to get the best stats you believe you will need.
-  2. Add on extras such as boosters, gliders, Springs to add unique abilities that afect the vehicle differently depending on whee they were placed on the body.
+  2. Add on extras such as boosters, gliders, Springs to add unique abilities that afect the vehicle differently depending on whee they were placed on the mesh.
   3. Race against the clock to score the best time vs other players on a global leaderboard.
 
 ## Other potential features
