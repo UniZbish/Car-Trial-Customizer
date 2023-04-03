@@ -15,7 +15,8 @@ public class DisplayCar : MonoBehaviour
     private List<CarBodies> carBodies;
     [SerializeField]
     private List<CarAddOn> carAddons;
-    public GameObject selectedCar;
+
+    public GameObject selectedCar = null;
 
     [SerializeField]
     private UIUpdater UIScript;
@@ -42,6 +43,11 @@ public class DisplayCar : MonoBehaviour
         if(cars.Count != 0) 
         {
             DisplayTheCar(cars[cars.Count - 1]);
+        }
+
+        if (cars.Count == 0) 
+        {
+            selectedCar = null;
         }
     }
 
@@ -71,18 +77,24 @@ public class DisplayCar : MonoBehaviour
 
     public void ApplyPaintJob(int indexToApply)
     {
-        CarPaint newPaint = paintJobs[indexToApply];
-        selectedCar.GetComponent<VehicleStats>().paintJob = newPaint;
-        selectedCar.GetComponentInChildren<MeshRenderer>().material = newPaint.material;
-        GameEventsPublisher.current.MaterialChanged(selectedCar.GetComponent<VehicleStats>().id);
+        if(selectedCar != null) 
+        {
+            CarPaint newPaint = paintJobs[indexToApply];
+            selectedCar.GetComponent<VehicleStats>().paintJob = newPaint;
+            selectedCar.GetComponentInChildren<MeshRenderer>().material = newPaint.material;
+            GameEventsPublisher.current.MaterialChanged(selectedCar.GetComponent<VehicleStats>().id);
+        }
     }
     private void ApplyBodyType(int indexToApply)
     {
-        CarBodies newBody = carBodies[indexToApply];
-        selectedCar.GetComponent<VehicleStats>().body = newBody;
-        DestroyCarModel();
-        InstantiateNewCarModel(newBody.carModel);
-        GameEventsPublisher.current.BodyTypeChanged(selectedCar.GetComponent<VehicleStats>().id);
+        if (selectedCar != null) 
+        {
+            CarBodies newBody = carBodies[indexToApply];
+            selectedCar.GetComponent<VehicleStats>().body = newBody;
+            DestroyCarModel();
+            InstantiateNewCarModel(newBody.carModel);
+            GameEventsPublisher.current.BodyTypeChanged(selectedCar.GetComponent<VehicleStats>().id);
+        }
     }
 
     private void DestroyCarModel() 
