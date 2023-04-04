@@ -87,14 +87,14 @@ public class DisplayCar : MonoBehaviour
     }
     private void ApplyBodyType(int indexToApply)
     {
-        if (selectedCar != null) 
-        {
-            CarBodies newBody = carBodies[indexToApply];
-            selectedCar.GetComponent<VehicleStats>().body = newBody;
-            DestroyCarModel();
-            InstantiateNewCarModel(newBody.carModel);
-            GameEventsPublisher.current.BodyTypeChanged(selectedCar.GetComponent<VehicleStats>().id);
-        }
+        if (selectedCar is null) return;
+     
+        CarBodies newBody = carBodies[indexToApply];
+        selectedCar.GetComponent<VehicleStats>().body = newBody;
+        DestroyCarModel();
+        InstantiateNewCarModel(newBody.carModel);
+        GameEventsPublisher.current.BodyTypeChanged(selectedCar.GetComponent<VehicleStats>().id);
+       
     }
 
     private void DestroyCarModel() 
