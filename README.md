@@ -1,6 +1,6 @@
-# Combustable
+# Car-Trial-Customizer
 
-Combustable is a time trial racing game with a unique customization mechanic where the addons you place on the vehicle can have a huge effect on the vehicle.
+is a time trial racing game with a unique customization mechanic where the addons you place on the vehicle can have a huge effect on the vehicle.
 
 ### Making a car is simple 
   1. Select a body time and paint job to get the best stats you believe you will need.
