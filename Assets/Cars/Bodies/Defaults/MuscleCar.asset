@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyName: Muscle
   description: 
-  changeSpeed: 0
-  changeHandling: 0
-  changeAcceleration: 0
-  changeCoolness: 0
+  changeSpeed: 70
+  changeHandling: 30
+  changeAcceleration: 20
+  changeCoolness: 50
   carModel: {fileID: 141870, guid: edf6cb56e12fba648b2cf1e7dfa5bf88, type: 3}

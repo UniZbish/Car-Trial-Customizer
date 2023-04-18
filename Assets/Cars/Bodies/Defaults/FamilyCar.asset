@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyName: SUV
   description: 
-  changeSpeed: 0
-  changeHandling: 0
-  changeAcceleration: 0
-  changeCoolness: 0
+  changeSpeed: 30
+  changeHandling: 60
+  changeAcceleration: 20
+  changeCoolness: 50
   carModel: {fileID: 157676, guid: fcd06c9319e99cc4bbee7ce7730d9422, type: 3}

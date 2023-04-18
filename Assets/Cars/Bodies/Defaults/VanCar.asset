@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyName: Van
   description: 
-  changeSpeed: 0
-  changeHandling: 0
-  changeAcceleration: 0
-  changeCoolness: 0
+  changeSpeed: 40
+  changeHandling: 60
+  changeAcceleration: 20
+  changeCoolness: 5
   carModel: {fileID: 130278, guid: 94469aeaca2d49442af381840b70bb6c, type: 3}

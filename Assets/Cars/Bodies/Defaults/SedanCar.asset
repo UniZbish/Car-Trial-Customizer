@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyName: Sedan
   description: 
-  changeSpeed: 0
-  changeHandling: 0
-  changeAcceleration: 0
-  changeCoolness: 0
+  changeSpeed: 50
+  changeHandling: 40
+  changeAcceleration: 40
+  changeCoolness: 50
   carModel: {fileID: 198730, guid: 85ac88d7c46e0ea4583870a98cc13580, type: 3}

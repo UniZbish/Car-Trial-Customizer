@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PaintJob_Acceleration
   m_EditorClassIdentifier: 
   paintName: Acceleration
-  changeSpeed: 0
-  changeHandling: 0
-  changeAcceleration: 0
-  changeCoolness: 0
+  changeSpeed: -10
+  changeHandling: -5
+  changeAcceleration: 20
+  changeCoolness: 10
   material: {fileID: 2100000, guid: a8e32d2cd442e564aa46c99f0ae7c0c8, type: 2}
