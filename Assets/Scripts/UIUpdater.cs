@@ -84,8 +84,10 @@ public class UIUpdater : MonoBehaviour
         carSlotText.text = "New Car";
 
         Image carSlotImage = temp.transform.Find("Image_CarImg").GetComponent<Image>();
+#if UNITY_EDITOR
         Texture2D carImage = AssetPreview.GetAssetPreview(newCar);
         carSlotImage.sprite = UpdateCarImage(carImage);
+#endif
         panelSlots.Add(temp);
     }
 
